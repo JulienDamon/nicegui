@@ -5,7 +5,7 @@ on:
 
 jobs:
   check_32bit:
-    runs-on: raspberry pi
+    runs-on: armv7l
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
