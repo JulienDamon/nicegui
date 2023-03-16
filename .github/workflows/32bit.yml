@@ -5,18 +5,10 @@ on:
 
 jobs:
   check_32bit:
-    runs-on: windows-latest
+    runs-on: raspberry pi
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Download and install Python (32-bit)
-        run: |
-          $pythonURL = "https://www.python.org/ftp/python/3.10.4/python-3.10.4-x86.exe"
-          $output = "python-installer.exe"
-          Invoke-WebRequest -Uri $pythonURL -OutFile $output
-          Start-Process -FilePath $output -ArgumentList "/quiet InstallAllUsers=1 PrependPath=1" -Wait
-          Remove-Item $output
 
       - name: Check Python version and architecture
         run: |
